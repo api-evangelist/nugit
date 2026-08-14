@@ -12,8 +12,15 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nugit.png
 name: Nugit
-description: Nugit is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: 'Nugit was a Singapore-based data-storytelling and marketing-analytics
+  company, founded in 2013 and backed by 500 Global. Its product pulled marketing,
+  advertising and web-analytics data from multiple sources and used natural language
+  generation to turn it into automated narrative reports and visual "data stories"
+  for brand and agency teams. Nugit never published a public developer API, portal,
+  reference or machine-readable specification, and the company is now defunct: the
+  nugit.co domain has been lost to an unrelated registrant and serves an online
+  gambling / SEO-spam site. The only surviving first-party surface is the dormant
+  github.com/nugit engineering organization.'
 url: https://raw.githubusercontent.com/api-evangelist/nugit/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -23,7 +30,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 tags:
 - Company
 - Analytics
@@ -33,10 +40,21 @@ tags:
 - Singapore
 x-status: defunct-domain-repurposed
 x-status-note: 'Nugit was a Singapore-based data-storytelling / marketing-analytics
-  startup (500 Global portfolio). As of 2026-07-20 the nugit.co domain no longer
-  serves the company; it resolves to an unrelated online-gambling site
-  (ALEXISTOGEL). No API, developer portal, docs, SDKs, or event surface exists to
-  enrich. Company appears defunct. Do not promote nugit.co as a live product link.'
+  startup (500 Global portfolio). Re-probed 2026-08-13 and the finding is unchanged
+  and worse: https://nugit.co/ returns 200 with an Indonesian online-gambling page
+  (ALEXISTOGEL) whose own canonical tag points at thewhiskyardvark.com — a hijacked
+  domain running an SEO doorway network. https://www.nugit.co/ 200s after redirecting
+  cross-site to ford-koenig-heiligenstadt.de. nugit.io is listed for sale on
+  domains.atom.com; api./docs./developer./app.nugit.co do not resolve at all. Every
+  contract-discovery and .well-known path on nugit.co 404s from the squatter''s
+  server. The Website pointer to nugit.co was REMOVED on 2026-08-13 so the catalog
+  stops sending readers to a gambling/spam site under Nugit''s name. Do not restore
+  it. The only verified first-party surface left is github.com/nugit (200, "Nugit
+  Engineering", 45 public repos, org created 2013-07-15, last substantive activity
+  2023) — 45 repos, none of which publish an API contract or client library. Domain
+  and DNS security probing was deliberately NOT run: nugit.co is no longer under
+  Nugit''s control, so its TLS/SPF/DMARC/CAA posture belongs to the squatter and
+  recording it would misattribute a third party''s configuration to this company.'
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -44,10 +62,39 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
-- type: Website
-  url: https://nugit.co
+- type: GitHubOrganization
+  url: https://github.com/nugit
+  name: Nugit Engineering
+- type: Packages
+  url: packages/nugit-packages.yml
+  name: Nugit first-party public packages (internal tooling only — no API SDK)
 x-enrichment:
-  date: '2026-07-20'
-  status: nochange
-  artifacts_added: 0
+  date: '2026-08-13'
+  status: minimal
+  artifacts_added: 1
   pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Nugit is dead and its domain has been taken over — https://nugit.co/ now returns
+    200 serving an Indonesian online-gambling doorway page (ALEXISTOGEL), www.nugit.co
+    redirects cross-site to an unrelated German business, and nugit.io is parked for
+    sale, leaving the dormant github.com/nugit org (45 repos, no API contract, last
+    substantive commit 2023) as the company's only surviving public surface.
+  evidence:
+  - url: https://nugit.co/
+    status: 200
+  - url: https://www.nugit.co/
+    status: 200
+  - url: https://nugit.co/openapi.json
+    status: 404
+  - url: https://nugit.co/.well-known/agent-card.json
+    status: 404
+  - url: https://nugit.co/llms.txt
+    status: 404
+  - url: https://nugit.io/
+    status: 403
+  - url: https://api.github.com/orgs/nugit
+    status: 200
+  checked: '2026-08-13'
