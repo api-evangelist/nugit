@@ -1,0 +1,73 @@
+generated: '2026-08-13'
+method: searched
+source: https://registry.npmjs.org/
+note: >-
+  Nugit publishes NO API client libraries. The packages below are the only
+  first-party public packages that survive the company's shutdown, and they are
+  internal engineering tooling (an ESLint config and a date/time helper shared
+  between Nugit's own projects) — not SDKs for a Nugit API. No `SDKs` pointer is
+  emitted for this artifact for exactly that reason. They are recorded here
+  because their publish dates are the strongest dated evidence available of when
+  Nugit last shipped anything publicly: the newest release is 2024-05-28, and
+  the nugit.co domain had been lost to an unrelated registrant by 2026-07.
+registries_checked:
+  - registry: npm
+    query: nugit
+    result: 3 first-party packages under the github.com/nugit org; no API client library
+  - registry: pypi
+    query: nugit
+    result: >-
+      pypi.org/project/nugit exists (1.1.0) but is an unrelated git-hooks tool by a
+      third party — NOT this company. Not recorded.
+  - registry: rubygems
+    query: nugit
+    result: no first-party package
+  - registry: crates.io
+    query: nugit
+    result: no first-party package
+  - registry: nuget
+    query: nugit
+    result: no first-party package
+  - registry: maven-central
+    query: nugit
+    result: no first-party package
+  - registry: pkg.go.dev
+    query: nugit
+    result: no first-party package
+packages:
+  - language: javascript
+    registry: npm
+    name: eslint-config-nugit
+    url: https://www.npmjs.com/package/eslint-config-nugit
+    repository: https://github.com/nugit/eslint-config-nugit
+    install: npm install --save-dev eslint-config-nugit
+    official: true
+    kind: internal-tooling
+    version: 4.0.0
+    published: '2024-05-28'
+    note: Nugit's base JS ESLint config. Internal style tooling, not an API SDK.
+  - language: javascript
+    registry: npm
+    name: nugit-datetime-utils
+    url: https://www.npmjs.com/package/nugit-datetime-utils
+    repository: https://github.com/nugit/datetime-utils
+    install: npm install nugit-datetime-utils
+    official: true
+    kind: internal-tooling
+    version: 7.0.0
+    published: '2022-02-08'
+    note: Shared date/time helper library across Nugit projects. Not an API SDK.
+source_code:
+  organization: https://github.com/nugit
+  organization_name: Nugit Engineering
+  public_repos: 45
+  created: '2013-07-15'
+  http_status: 200
+  note: >-
+    Verified first-party on 2026-08-13 — the org carries `datascientist-task`
+    ("Nugit Data Scientist Task", an SEM/SEO cannibalization regression exercise),
+    `nugit-font-icons`, `internal-nugit-microposts-site`, and forks of the ad-platform
+    SDKs a marketing-analytics product would consume (Twitter Ads Python/Ruby,
+    Google Ads Java, Facebook Graph Python). No repository in the org publishes an
+    OpenAPI, AsyncAPI, GraphQL SDL, Postman collection or an API client library.
+    Substantive activity stops in 2023; the newest pushes are dependency bumps.
